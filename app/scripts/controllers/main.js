@@ -35,11 +35,11 @@ function mainCtrl(seekerApi, $location) {
   }
 
   function selectEntity(entity){
-    $location.path('/entity/' + entity.RFC);
+    $location.path('entity/' + entity.RFC);
   }
 
   function selectRFC() {
-    $location.path('/entity/' + vm.RFC);
+    $location.path('entity/' + vm.RFC);
   }
 
 }

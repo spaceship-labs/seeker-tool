@@ -23,9 +23,9 @@ function entityCtrl(Restangular, $routeParams, seekerApi) {
   vm.init();
 
   function getTemplate(entry) {
-    var template = '/views/69entry.html';
+    var template = 'views/69entry.html';
     if (entry.list === 'Artículo 69B') {
-      template = '/views/69Bentry.html';
+      template = 'views/69Bentry.html';
     }
     return template;
   }

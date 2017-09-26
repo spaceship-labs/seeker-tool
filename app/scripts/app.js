@@ -36,6 +36,6 @@ angular
       });
   })
   .config(function(RestangularProvider) {
-    RestangularProvider.setBaseUrl('http://seekerone.herokuapp.com/');
+    RestangularProvider.setBaseUrl('https://seekerone.herokuapp.com/');
     //RestangularProvider.setBaseUrl('http://localhost:1337/');
   });

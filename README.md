@@ -12,4 +12,4 @@ Running `grunt test` will run the unit tests with karma.
 
 ## Configuration
 
-By default the application will use the seekerone api located at seekerone.herokuapp.com to change this you can edit `app/scripts/app.js`. Changing the `RestangularProvider.setBaseUrl` to whatever URL you need. 
+By default the application will use the seekerone api located at seekerone.herokuapp.com to change this you can edit `app/scripts/app.js` changing the `RestangularProvider.setBaseUrl` to whatever URL you need. 
