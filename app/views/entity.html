@@ -1,0 +1,16 @@
+<ng-include src='"views/main-toolbar.html"'></ng-include>
+<md-content class="md-padding" layout='row' layout-align='center center'>
+  <md-progress-circular md-mode="indeterminate" ng-show='vm.loading'></md-progress-circular>
+  <md-card class='md-padding' ng-show='!vm.loading' flex>
+    <h2>{{vm.entity.entityName}}</h2>
+    <p><strong>RFC:</strong> {{vm.entity.RFC}}</p>
+    <md-list>
+      <md-list-item class="md-2-line" ng-repeat='entry in vm.entity.entries'>
+        <i class="material-icons" ng-class='vm.getIconClass(entry)'>{{vm.getIcon(entry)}}</i>
+        <div class="md-list-item-text">
+          <ng-include src='vm.getTemplate(entry)'></ng-include>
+        </div>
+      </md-list-item>
+    </md-list>
+  </md-card>
+</md-content>

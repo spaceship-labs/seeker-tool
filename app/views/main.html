@@ -1,0 +1,46 @@
+<ng-include src='"views/main-toolbar.html"'></ng-include>
+<md-content class="md-padding" layout-align='center'>
+  <form ng-submit="vm.queryEntity(vm.entityNameInput)" layout='row' layout-align='center center' class='md-padding'>
+    <md-autocomplete flex='80' md-selected-item-change='vm.selectEntity(item)' md-delay='150' md-selected-item="vm.selectedItem" md-search-text="vm.entityNameInput" md-items="item in vm.queryEntity(vm.entityNameInput)" md-item-text="item.entityName" placeholder="Busqueda por Razon Social">
+      <md-item-template>
+        <span md-highlight-text="vm.entityNameInput" md-highlight-flags="^i">{{item.entityName}} | {{item.RFC}} </span>
+      </md-item-template>
+      <md-not-found>
+        No se encontro "{{vm.entityNameInput}}".
+      </md-not-found>
+    </md-autocomplete>
+    <br/>
+  </form>
+  <md-card class='md-padding'>
+    <p>Este portal publica a los contribuyentes en Mexico que han perdido el secreto fiscal por motivo de algún incumplimiento fiscal</p>
+    <p>Para verificar una razon social utiliza el campo de búsqueda</p>
+    <p ng-show='!vm.seeMore'><a href='' ng-click='vm.seeMore = true'>Leer más</a></p>
+    <div ng-show='vm.seeMore'>
+      <p>El SAT publica el nombre, denominación o razón social y clave del RFC, de quienes se encuentran en cualquiera de los siguientes casos:</p>
+      <p>1. Tengan a su cargo créditos fiscales firmes; esto es, aquellos créditos por los que:</p>
+      <p>No se interpuso algún medio de defensa (recurso de revocación, juicio de nulidad o amparo) dentro de los plazos señalados en la Ley.</p>
+      <ul>
+        <li>Se haya desistido del medio de defensa respectivo. </li>
+        <li>Se emita resolución que confirme la validez del crédito. </li>
+      </ul>
+      <p>2. Se cuente con créditos fiscales no pagados o garantizados; esto es, que se tengan cantidades que se deban al fisco federal por concepto de contribuciones que no se hayan pagado conforme a lo dispuesto en las leyes fiscales; o bien, no se hayan garantizado en alguna de las formas permitidas por el Código Fiscal de la Federación; como por ejemplo, el depósito en dinero, prenda o hipoteca, fianza, embargo en la vía administrativa, entre otras.</p>
+      <p>3. Se encuentren como no localizados en el RFC; debido a que los contribuyentes:</p>
+      <p>No hayan manifestado un domicilio fiscal, estando obligados;</p>
+      <p>Hubieran indicado un domicilio fiscal en donde no realicen sus actividades;</p>
+      <p>Hayan registrado un domicilio fiscal ficticio;</p>
+      <p>No actualicen su domicilio fiscal en el RFC;</p>
+      <p>Proporcionen datos del domicilio fiscal de forma incompleta o incorrecta;</p>
+      <p>No acrediten que la casa habitación es el domicilio fiscal por no contar con un local; o bien,</p>
+      <p>Se haya llevado a cabo una notificación o diligencia por parte de la autoridad fiscal en el domicilio registrado ante el RFC y no se encuentre ninguna persona en el mismo, o se indique que no se conoce a la persona a quien se pretende notificar.</p>
+      <p>4. Se tenga una sentencia condenatoria por haber cometido un delito fiscal; como lo son, entre otros:</p>
+      <p>Registrar operaciones contables, fiscales o sociales en dos o más sistemas de contabilidad con diferentes contenidos.</p>
+      <p>Ocultar, alterar o destruir, total o parcialmente los sistemas y registros contables.</p>
+      <p>Determinar pérdidas fiscales con falsedad.</p>
+      <p>Alterar o destruir sellos o marcas oficiales colocadas con fines fiscales.</p>
+      <p>Expedir, adquirir o enajenar comprobantes fiscales que amparen operaciones inexistentes, falsas o actos simulados.</p>
+      <p>5. Se tenga a cargo créditos fiscales que hayan sido afectados en los términos del artículo 146-A del Código Fiscal de la Federación; esto es, que se considere su imposibilidad de cobro o por insolvencia del deudor o del responsable solidario. </p>
+      <p>6. Se les haya condonado algún crédito fiscal. </p>
+      <p>Fuente: <a href='http://www.sat.gob.mx/cifras_sat/Paginas/inicio.html'> http://www.sat.gob.mx/cifras_sat/Paginas/inicio.html</a></p>
+    </div>
+  </md-card>
+</md-content>
