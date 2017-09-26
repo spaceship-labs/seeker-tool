@@ -16,6 +16,7 @@ function mainCtrl(seekerApi, $location) {
 
   vm.init = init;
   vm.queryEntity = queryEntity;
+  vm.queryRFC = queryRFC;
   vm.selectRFC = selectRFC;
   vm.selectEntity = selectEntity;
   vm.seeMore = false;
@@ -34,7 +35,15 @@ function mainCtrl(seekerApi, $location) {
     return seekerApi.getEntities(params);
   }
 
-  function selectEntity(entity){
+  function queryRFC(text) {
+    var params = {
+      where: { 'RFC': { contains: text } },
+      limit: 20
+    };
+    return seekerApi.getEntities(params);
+  }
+
+  function selectEntity(entity) {
     $location.path('entity/' + entity.RFC);
   }
 
