@@ -1,29 +1,46 @@
-<ng-include src='"views/main-toolbar.html"'></ng-include>
-<md-content class="md-padding" >
-  <form ng-submit="vm.queryEntity(vm.entityNameInput)" layout='row' layout-align='space-between' flex='100'>
-    <md-autocomplete flex='60' md-selected-item-change='vm.selectEntity(item)' md-delay='150' md-selected-item="vm.selectedItem" md-search-text="vm.entityNameInput" md-items="item in vm.queryEntity(vm.entityNameInput)" md-item-text="item.entityName" placeholder="Busqueda por Razon Social">
-      <md-item-template>
-        <span md-highlight-text="vm.entityNameInput" md-highlight-flags="^i">{{item.entityName}} | {{item.RFC}} </span>
-      </md-item-template>
-      <md-not-found>
-        No se encontro "{{vm.entityNameInput}}".
-      </md-not-found>
-    </md-autocomplete>
-    <md-autocomplete flex='30' md-selected-item-change='vm.selectEntity(item)' md-delay='150' md-selected-item="vm.selectedItem" md-search-text="vm.entityRFCInput" md-items="item in vm.queryRFC(vm.entityRFCInput)" md-item-text="item.entityName" placeholder="Busqueda por RFC">
-      <md-item-template>
-        <span md-highlight-text="vm.entityRFCInput" md-highlight-flags="^i">{{item.RFC}} | {{item.entityName}} </span>
-      </md-item-template>
-      <md-not-found>
-        No se encontro "{{vm.entityRFCInput}}".
-      </md-not-found>
-    </md-autocomplete>
-    <br/>
+<!-- <ng-include src='"views/main-toolbar.html"'></ng-include> -->
+<md-content class="md-padding">
+  <div id='main-logo' layout='row' layout-align='center center'>
+    <img src='/images/logo.png' alt='secretofiscal.org' />
+  </div>
+  <div layout='row' layout-align='center center'>
+    <h2 class='center container'>
+      <a href='https://secretofiscal.org'>SECRETOFISCAL.ORG</a> publica a los contribuyentes en <strong>México</strong> que han perdido el secreto fiscal por motivo de algún incumplimiento.
+    </h2>
+  </div>
+  <div layout='row' layout-align='center center'>
+    <h3 class='center'>Para verificar una razón social ultiliza el campo de búsqueda.</h3>
+  </div>
+  <form ng-submit="vm.queryEntity(vm.entityNameInput)" flex='100' id='main-search'>
+    <p>
+      <md-autocomplete md-selected-item-change='vm.selectEntity(item)' md-delay='150' md-selected-item="vm.selectedItem" md-search-text="vm.entityNameInput" md-items="item in vm.queryEntity(vm.entityNameInput)" md-item-text="item.entityName" placeholder="Busqueda por Razon Social">
+        <md-item-template>
+          <span md-highlight-text="vm.entityNameInput" md-highlight-flags="^i">{{item.entityName}} | {{item.RFC}} </span>
+        </md-item-template>
+        <md-not-found>
+          No se encontro "{{vm.entityNameInput}}".
+        </md-not-found>
+      </md-autocomplete>
+    </p>
+    <p>
+      <md-autocomplete md-selected-item-change='vm.selectEntity(item)' md-delay='150' md-selected-item="vm.selectedItem" md-search-text="vm.entityRFCInput" md-items="item in vm.queryRFC(vm.entityRFCInput)" md-item-text="item.entityName" placeholder="Busqueda por RFC">
+        <md-item-template>
+          <span md-highlight-text="vm.entityRFCInput" md-highlight-flags="^i">{{item.RFC}} | {{item.entityName}} </span>
+        </md-item-template>
+        <md-not-found>
+          No se encontro "{{vm.entityRFCInput}}".
+        </md-not-found>
+      </md-autocomplete>
+    </p>
+    <br />
   </form>
-  <md-card class='md-padding'>
+</md-content>
+<md-content class='green-space'>
+  <div class='container'>
+    <p ng-show='!vm.seeMore'><a href='' ng-click='vm.seeMore = true'>Leer menos</a></p>
     <p>Este portal publica a los contribuyentes en México que han perdido el secreto fiscal por motivo de algún incumplimiento.</p>
     <p>Para verificar una razón social utiliza el campo de búsqueda.</p>
-    <p ng-show='!vm.seeMore'><a href='' ng-click='vm.seeMore = true'>Leer más</a></p>
-    <div ng-show='vm.seeMore'>
+    <div ng-show='!vm.seeMore'>
       <p>El SAT publica el nombre, denominación o razón social y clave del RFC, de quienes se encuentran en cualquiera de los siguientes casos:</p>
       <p>1. Tengan a su cargo créditos fiscales firmes; esto es, aquellos créditos por los que:</p>
       <p>No se interpuso algún medio de defensa (recurso de revocación, juicio de nulidad o amparo) dentro de los plazos señalados en la Ley.</p>
@@ -50,5 +67,5 @@
       <p>6. Se les haya condonado algún crédito fiscal. </p>
       <p>Fuente: <a href='http://www.sat.gob.mx/cifras_sat/Paginas/inicio.html'> http://www.sat.gob.mx/cifras_sat/Paginas/inicio.html</a></p>
     </div>
-  </md-card>
+  </div>
 </md-content>

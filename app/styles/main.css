@@ -1,3 +1,7 @@
+*{
+	font-family:"Rajdhani";
+}
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -21,3 +25,64 @@ md-list-item i.material-icons.danger{
 	color:#F44336;
 }
 
+
+a{
+  color:#92c145;
+  text-decoration: none;
+}
+
+h2{
+  font-weight: bold;
+  font-size: 40px;
+  color:black;
+}
+
+h2 strong{
+  color:#20968e;
+}
+
+h3{
+  color:#20968e;
+  font-size:30px;
+}
+#main-search md-autocomplete-wrap{
+  box-shadow:none;
+  max-width:800px;
+  margin:0 auto;
+}
+#main-search md-autocomplete input{
+  font-family: "Rajdhani";
+  font-size:20px;
+  background-color:#dadada;
+  border: none;
+  box-shadow: none;
+  color: #000;
+}
+.center{
+  text-align:center;
+}
+
+
+.container{
+  max-width: 1000px;
+  margin:0 auto;
+}
+
+.form-container{
+  max-width: 800px;
+}
+
+.green-space{
+  background-color: #20968e;
+  color:white;
+  font-size:21px;
+}
+
+
+#main-logo{
+  margin:20px 0 50px;
+}
+
+#main-logo img{
+  width:380px;
+}
