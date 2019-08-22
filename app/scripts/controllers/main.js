@@ -19,6 +19,7 @@ function mainCtrl(seekerApi, $location) {
   vm.queryRFC = queryRFC;
   vm.selectRFC = selectRFC;
   vm.selectEntity = selectEntity;
+  vm.getOrientationIcon = getOrientationIcon;
   vm.seeMore = false;
 
   vm.init();
@@ -51,4 +52,7 @@ function mainCtrl(seekerApi, $location) {
     $location.path('entity/' + vm.RFC);
   }
 
+  function getOrientationIcon() {
+    return vm.seeMore ? "rotate" : "";
+  }
 }

@@ -47,17 +47,25 @@ h2{
 h2 strong{
   color:#20968e;
 }
-
+.entryMotive strong{
+  color:rgba(0,0,0,0.87);;
+}
 h3{
   color:#20968e;
   font-size:30px;
 }
-
+.rotate{
+  transform: rotate(180deg);
+}
 #main-search md-autocomplete-wrap{
   box-shadow:none;
   max-width:800px;
   margin:0 auto;
 }
+
+md-autocomplete {
+  background-color:transparent;
+} 
 
 .cardData { 
   font-size:32px;
@@ -79,6 +87,9 @@ p.ng-binding {
 .entityInfo{
   padding-left:15%;
 }
+body > div.ng-scope > md-content:nth-child(3){
+  background-color:transparent;
+}
 
 #main-search md-autocomplete input{
   font-family: "Rajdhani";
@@ -97,7 +108,16 @@ p.ng-binding {
   max-width: 1000px;
   margin:0 auto;
 }
-
+.container p a .text{
+  color: #FFF;
+  font-weight: bold;
+  font-size:25px;
+  margin-left: 15px;
+}
+.home-icon{
+  position: relative;
+  top:15px;
+}
 .form-container{
   max-width: 800px;
 }

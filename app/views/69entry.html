@@ -1,5 +1,10 @@
 <h2 class="entryMotive">{{vm.getMotive(entry)}}</h2>
-<md-card class="md-padding" ng-show='entry.ammount'>
+<h2 class="entryMotive" ng-show='entry.ammount'><strong>Monto: </strong> {{entry.ammount | currency}}</h2>
 
-  <p class="entryMotive"><strong>Monto: </strong> {{entry.ammount | currency}}</p>
-</md-card>
+<!--
+
+  <md-card class="md-padding" ng-show='entry.ammount'>
+    
+    <p class="entryMotive"><strong>Monto: </strong> {{entry.ammount | currency}}</p>
+  </md-card>
+-->

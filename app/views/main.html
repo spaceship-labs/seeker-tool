@@ -43,10 +43,24 @@
 </md-content>
 <md-content class='green-space'>
   <div class='container'>
-    <p ng-show='!vm.seeMore'><a href='' ng-click='vm.seeMore = true'>Leer menos</a></p>
+    <p>
+      <strong>
+        * Última actualización: 20 de agosto de 2019
+      </strong>
+    </p>
+    <p class='center'>
+      <a href='' ng-click='vm.seeMore = !vm.seeMore'>
+        <img class="home-icon" ng-class="vm.getOrientationIcon()" src="/images/arrow.png" width="50" height="50" />
+        <span ng-show='!vm.seeMore' class="text">
+          Leer menos
+        </span>
+        <span ng-show='vm.seeMore' class="text">
+          Leer más
+        </span>
+      </a>
+    </p>
     <p>Este portal publica a los contribuyentes en México que han perdido el secreto fiscal por motivo de algún
       incumplimiento.</p>
-    <p>Para verificar una razón social utiliza el campo de búsqueda.</p>
     <div ng-show='!vm.seeMore'>
       <p>El SAT publica el nombre, denominación o razón social y clave del RFC, de quienes se encuentran en cualquiera
         de los siguientes casos:</p>

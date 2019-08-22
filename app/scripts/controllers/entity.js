@@ -10,7 +10,7 @@
 angular.module('seekerToolApp')
   .controller('EntityCtrl', entityCtrl);
 
-function entityCtrl(Restangular, $routeParams, seekerApi) {
+function entityCtrl(Restangular, $routeParams, $location, seekerApi) {
   /* jshint validthis: true */
   var vm = this;
 
@@ -18,6 +18,10 @@ function entityCtrl(Restangular, $routeParams, seekerApi) {
   vm.getIconClass = getIconClass;
   vm.getMotive = getMotive;
   vm.getTemplate = getTemplate;
+  vm.queryEntity = queryEntity;
+  vm.queryRFC = queryRFC;
+  vm.selectRFC = selectRFC;
+  vm.selectEntity = selectEntity;
   vm.init = init;
 
   vm.init();
@@ -90,6 +94,30 @@ function entityCtrl(Restangular, $routeParams, seekerApi) {
   function setEntity(entity) {
     vm.entity = entity;
     vm.loading = false;
+  }
+
+  function queryEntity(text) {
+    var params = {
+      where: { 'entityName': { contains: text } },
+      limit: 20
+    };
+    return seekerApi.getEntities(params);
+  }
+
+  function queryRFC(text) {
+    var params = {
+      where: { 'RFC': { contains: text } },
+      limit: 20
+    };
+    return seekerApi.getEntities(params);
+  }
+
+  function selectEntity(entity) {
+    $location.path('entity/' + entity.RFC);
+  }
+
+  function selectRFC() {
+    $location.path('entity/' + vm.RFC);
   }
 
 }
