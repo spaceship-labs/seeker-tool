@@ -1,6 +1,5 @@
-<h3>{{vm.getMotive(entry)}}</h3>
-<br/>
-<p><strong>Tipo de persona: </strong> {{entry.entityType}}</p>
-<p><strong>Fecha de publicación: </strong> {{entry.publicationDate}}</p>
-<p ng-show='entry.ammount'><strong>Monto: </strong> {{entry.ammount | currency}}</p>
-<br/>
+<h2 class="entryMotive">{{vm.getMotive(entry)}}</h2>
+<md-card class="md-padding" ng-show='entry.ammount'>
+
+  <p class="entryMotive"><strong>Monto: </strong> {{entry.ammount | currency}}</p>
+</md-card>
