@@ -69,7 +69,8 @@ md-autocomplete {
 
 .cardData { 
   font-size:32px;
-  max-width:70%;
+  min-width: 50%;
+  max-width: 75%;
   line-height: 1em;
   text-align: justify;
 }
