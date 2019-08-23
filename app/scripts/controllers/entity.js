@@ -17,6 +17,7 @@ function entityCtrl(Restangular, $routeParams, $location, seekerApi) {
   vm.getIcon = getIcon;
   vm.getIconClass = getIconClass;
   vm.getMotive = getMotive;
+  vm.getDate = getDateFormat;
   vm.getTemplate = getTemplate;
   vm.queryEntity = queryEntity;
   vm.queryRFC = queryRFC;
@@ -33,7 +34,9 @@ function entityCtrl(Restangular, $routeParams, $location, seekerApi) {
     }
     return template;
   }
-
+  function getDateFormat(date) {
+    return date.split("T")[0]
+  }
   function getIcon(entry) {
     var icon = 'warning';
     if (entry.list === 'Artículo 69' && entry.publicationMotive === 'SENTENCIAS') {
