@@ -136,3 +136,56 @@ body > div.ng-scope > md-content:nth-child(3){
 #main-logo img{
   width:380px;
 }
+
+footer{ 
+  margin-top:150px;
+}
+@media (min-width:0px) and (max-width: 400px) {
+  .responsive-text{
+    font-weight: bold;
+    padding-left:10px;
+    padding-right: 10px;
+    font-size:14px;
+  }
+  .responsive-img {
+    max-width: 30%;
+  }
+  .responsive-img:nth-child(2){
+    position:relative;
+    bottom:5px;
+  }
+}
+@media (min-width:401px) and (max-width: 600px) {
+  .responsive-text{
+    font-weight: bold;
+    padding-left:10px;
+    padding-right: 10px;
+    font-size:18px;
+  }
+  .responsive-img {
+    max-width: 30%;
+  }
+  .responsive-img:nth-child(2){
+    position:relative;
+    bottom:5px;
+  }
+}
+@media (min-width: 601px) {
+  .responsive-text{
+    font-weight: bold;
+    padding-left:10px;
+    padding-right: 20px;
+    font-size:32px;
+  }
+  .responsive-img {
+    max-width: 30%;
+  }
+  .responsive-img:nth-child(2){
+    position:relative;
+    bottom:15px;
+  }
+}
+
+.responsive-img{
+  cursor: pointer; 
+}
