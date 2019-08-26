@@ -42,8 +42,8 @@ function entityCtrl(Restangular, $routeParams, $location, seekerApi) {
 
   function getEntityType(entries) {
     const type = entries ? entries[0].entityType : "No definido";
-
-    return type;
+    console.log("type =", type)
+    return type ? type : "No definido";
   }
 
   function getIcon(entry) {
