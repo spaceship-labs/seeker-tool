@@ -18,6 +18,7 @@ function entityCtrl(Restangular, $routeParams, $location, seekerApi) {
   vm.getIconClass = getIconClass;
   vm.getMotive = getMotive;
   vm.getDate = getDateFormat;
+  vm.getEntityType = getEntityType;
   vm.getTemplate = getTemplate;
   vm.queryEntity = queryEntity;
   vm.queryRFC = queryRFC;
@@ -35,8 +36,16 @@ function entityCtrl(Restangular, $routeParams, $location, seekerApi) {
     return template;
   }
   function getDateFormat(date) {
-    return date.split("T")[0]
+
+    return date ? date.split("T")[0] : ""
   }
+
+  function getEntityType(entries) {
+    const type = entries ? entries[0].entityType : "No definido";
+
+    return type;
+  }
+
   function getIcon(entry) {
     var icon = 'warning';
     if (entry.list === 'Artículo 69' && entry.publicationMotive === 'SENTENCIAS') {

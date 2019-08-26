@@ -11,7 +11,7 @@
         </strong>
       </h2>
       <p><strong>RFC:</strong> {{vm.entity.RFC}}</p>
-      <p><strong>TIPO DE PERSONA:</strong> {{vm.entity.entries[0].entityType}}</p>
+      <p><strong>TIPO DE PERSONA:</strong> {{vm.getEntityType(vm.entity.entries)}}</p>
       <p ng-show='vm.entity.entries[0].createdAt'>
         <strong>FECHA DE PUBLICACIÓN</strong> {{vm.getDate(vm.entity.entries[0].createdAt)}}
       </p>

@@ -4,8 +4,8 @@
 
   <p><strong>Situación: </strong> {{entry.status}}</p>
   <p><strong>Número y fecha de oficio global de presunción: </strong> {{entry.document}}</p>
-  <p><strong>Publicación página SAT presuntos: </strong> {{entry.publicationPresumtive}}</p>
-  <p><strong>Publicación DOF presuntos: </strong> {{entry.publicationDOFPresumtive}}</p>
+  <p><strong>Publicación página SAT presuntos: </strong> {{vm.getDate(entry.publicationPresumtive)}}</p>
+  <p><strong>Publicación DOF presuntos: </strong> {{vm.getDate(entry.publicationDOFPresumtive)}}</p>
   <p ng-show='entry.disprovedDocument'><strong>Número y fecha de oficio global de contribuyentes que desvirtuaron:
     </strong> {{entry.presumptionDocument}}</p>
   <p ng-show='entry.publicationDisproved'><strong>Publicación página SAT Desvirtuados: </strong>
@@ -15,7 +15,7 @@
   <p ng-show='entry.documentDefinitive'><strong>Número y fecha de oficio global de definitivos: </strong>
     {{entry.documentDefinitive}}</p>
   <p ng-show='entry.publicationDefinitive'><strong>Publicación página SAT definitivos: </strong>
-    {{entry.publicationDefinitive}}</p>
+    {{vm.getDate(entry.publicationDefinitive)}}</p>
   <p ng-show='entry.publicationDOFDefinitive'><strong>Publicación DOF definitivos: </strong>
-    {{entry.publicationDOFDefinitive}}</p>
+    {{vm.getDate(entry.publicationDOFDefinitive)}}</p>
 </md-card>
