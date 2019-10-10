@@ -31,6 +31,11 @@ angular
         controller: 'EntityCtrl',
         controllerAs: 'vm'
       })
+      .when('/video', {
+        templateUrl: 'views/video.html',
+        controller: 'VideoCtrl',
+        controllerAs: 'video'
+      })
       .otherwise({
         redirectTo: '/'
       });
